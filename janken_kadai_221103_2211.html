@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja"></html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="header">
+            <h1 >磯野家じゃんけん</h1>
+            <div class="d-demo">
+                <div class="d-demo__wrap">
+                    <ul class="d-demo__list d-demo__list--left">
+                        <li class="d-demo__item"><img src="./img/sa01.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/sa02.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/sa03.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/sa04.jpg" alt></li>
+                     </ul>
+                     <ul class="d-demo__list d-demo__list--left">
+                        <li class="d-demo__item"><img src="./img/sa01.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/sa02.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/sa03.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/sa04.jpg" alt></li>
+                     </ul>
+                </div>
+              </div>
+        </div>
+        <div class="main">
+            <img src="./img/katuo_01.jpg" alt='katuo'>
+        </div>
+        <div class="nav">
+            <span class="blinking">
+                <ul id="janken">
+                    <li id="gu_btn"><img class="img" src="./img/Gu_300px.png"></li>
+                    <li id="cho_btn"><img class="img"  src="./img/Choki_300px.png"></li>
+                    <li id="par_btn"><img class="img" src="./img/Par_300px.png"></li>
+                </ul>
+            </span>
+        </div>
+        <div class="center">
+            <h1>カツオの出した手は？：<br><span id="katuo_hands"></span></h1>
+            <h1>  <br></h1>
+            <h1>サザエさんの出した手は？：<br><span id="pc_hands"></span></h1>
+            <h1>  <br></h1>
+            <h1>じゃんけんの結果は？：<br><span id="judgement"></span></h1>
+            <h1>  <br></h1>
+            <h1>結果累計:<span id="result"></span></h1>
+            <h1>  <br></h1>
+            <table class="score-board" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                    <th class="cell-team" scope="col">チーム</th>
+                    <th class="cell-inning" scope="col">1</th>
+                    <th class="cell-inning" scope="col">2</th>
+                    <th class="cell-inning" scope="col">3</th>
+                    <!-- <th id="cell-inning" scope="col">4</th>
+                    <th id="cell-inning" scope="col">5</th>
+                    <th id="cell-score" scope="col">計</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td id="team_katuo" scope="row">カツオ</td>
+                    <td id="katuo_inning1"></td>
+                    <td id="katuo_inning2"></td>
+                    <td id="katuo_inning3"></td>
+                    <!-- <td id="cell-inning">4</td>
+                    <td id="cell-inning">0</td>
+                    <td id="cell-score">6</td> -->
+                    </tr>
+                    <tr>
+                    <td id="team_sazae" scope="row">サザエ</td>
+                    <td id="sazae_inning1"></td>
+                    <td id="sazae_inning2"></td>
+                    <td id="sazae_inning3"></td>
+                    <!-- <td id="cell-inning">0</td>
+                    <td id="cell-inning">1</td>
+                    <td id="cell-score">4</td> -->
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="sidebar">
+            <ul class="aite">
+                <li id="aite_gu_btn">
+                    <video id="aite_Gu" src="./img/Gu_sazaesan.mp4" poster="./img/Gu_300px.png"></video>
+                </li>
+                <li id="aite_cho_btn">
+                    <video id="aite_Choki" src="./img/Choki_sazaesan.mp4" poster="./img/Choki_300px.png"></video>
+                </li>
+                <li id="aite_par_btn">
+                    <video id="aite_Par" src="./img/Par_sazaesan.mp4" poster="./img/Par_300px.png"></video>
+                </li>
+            </ul>
+        </div>
+        <div class="action">
+            <img src="./img/sazae_01.jpg" alt='sazae'>
+        </div>
+        <!-- <div class="footer">
+            <h1>コンピュータの出した手は？<span id="pc_hands"></span></h2>
+            <h1>じゃんけんの結果は？<span id="judgement"></span></h2>
+        </div> -->
+    </div>
+
+
+    <!-- <div id="box1">
+        <h2>
+            <ul id="janken">
+                <li id="gu_btn"><img class="img" src="./img/gu.png"></li>
+                <li id="cho_btn"><img class="img"  src="./img/choki.png"></li>
+                <li id="par_btn"><img class="img" src="./img/par.png"></li>
+            </ul>
+        </h2>
+    </div> -->
+
+    <!-- <h2>の出す手は？</h2>
+        <h2>コンピュータの出す手は、どれかなフワフフン？</h2> -->
+
+        <!-- <div id="aite_douga"></div>
+        <div>
+            <ul class="aite">
+                <li id="aite_gu_btn">
+                    <video id="aite_Gu" src="./img/Gu_sazaesan.mp4" poster="./img/Gu_300px.png"></video>
+                </li>
+                <li id="aite_cho_btn">
+                    <video id="aite_Choki" src="./img/Choki_sazaesan.mp4" poster="./img/Choki_300px.png"></video>
+                </li>
+                <li id="aite_par_btn">
+                    <video id="aite_Par" src="./img/Par_sazaesan.mp4" poster="./img/Par_300px.png"></video>
+                </li>
+            </ul>
+        </div>
+
+        <h2>コンピュータの出した手は？<span id="pc_hands"></span></h2>
+        
+        <h2>じゃんけんの結果は？<span id="judgement"></span></h2> -->
+
+
+
+    </main>
+
+    <footer></footer>
+
+</body>
+
+<!-- <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script> -->
+<script src="./main.js"></script>
+
+</html>

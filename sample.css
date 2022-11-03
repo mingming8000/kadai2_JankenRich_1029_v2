@@ -1,0 +1,355 @@
+html,body {
+    height: auto;
+    width:cover;
+    /* width:1400px; */
+    margin:0;
+    padding:0;
+}
+
+.container{
+    display:grid;
+    /* 221103 1208 追加 */
+    /* display: grid/inline-grid; */
+    /* overflow: hidden; */
+
+    grid-template:
+        " top top top top top" 200px
+        "left lecen center ricen right"600px
+        "bottom bottom bottom bottom bottom" 0
+        / 1fr 220px 380px 360px 1fr;
+    /* gap:10px; */
+}
+
+.header{
+    grid-area:  top;
+    position:relative;
+    text-align: center;
+    vertical-align: top;
+    font-size: 80px;
+    height:200px;
+}
+.header h1{
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    z-index: 5;
+    padding-top: 0px;
+    margin:0 0 0 0;
+
+    color:blue;
+    -webkit-text-stroke: 3px gray;
+}
+.main{
+    grid-area:left;
+    margin:auto 0;
+    /* background-color: blue; */
+}
+.main img{
+    width:250px;
+    height:auto;
+}
+.nav{
+    grid-area: lecen;
+    /* background-color: blue; */
+    /* border: 5px solid black; */
+    /* display:flex; */
+}
+#gu_btn #cho_btn #par_btn{
+    background-color: blue;
+}
+
+/* 221030 1132 blinking追加 */
+/* https://www.will-hp.com/wpblog/webcont/72/ */
+.blinking{
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0.3;}
+    100% {opacity:1.0;color:skyblue}
+}
+@-moz-keyframes blink{
+    0% {opacity:0.3;}
+    100% {opacity:1.0;color:skyblue}
+}
+@keyframes blink{
+    0% {opacity:0.3;}
+    100% {opacity:1.0;color:skyblue}
+}
+.janken{
+    border: 5px solid black;
+    width:200px;
+    height:600px;
+}
+
+
+.center{
+    grid-area: center;
+    text-align: left;
+    /* align-items: center; */
+    vertical-align: top;
+    font-size: 25px;
+    padding-top:30px;
+}
+.center h1 span{
+  padding-left:100px;
+  /* text-align: center; */
+}
+
+/* 221030 1820スコアボード */
+.score-board{
+    margin:0 auto;
+    width:300px;
+    border:1px double black;
+}
+.th{
+    border:1px solid black;
+}
+.cell-inning{
+    width:50px;
+}
+
+.sidebar{
+    grid-area: ricen;
+}
+/* 221103 1256 以下は効果なし */
+/* #aite_gu_btn #aite_cho_btn #aite_par_btn{
+    position: relative;
+    width: 50vw;
+    height: 50vh;
+    overflow: hidden;
+} */
+/* #aite_gu_btn {
+    position: relative;
+    /* width: 20vw;
+    height: 20vh; */
+    /* overflow: hidden; */
+    /* height:200px;
+    min-width: 100%;
+    min-height: 100%; */
+
+/* } */ 
+
+#aite_Gu,#aite_Choki, #aite_Par {
+    position: relative;
+    /* width: 20vw;
+    height: 20vh; */
+    /* overflow: hidden; */
+    height:200px;
+    min-width: 100%;
+    min-height: 100%;
+
+}
+
+
+
+
+
+
+/* 221103 1256 以下は効果なし */
+/* #aite_Gu #aite_Choki #aite_Par{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+} */
+
+.action{
+    grid-area: right;
+    margin:auto 0;
+    z-index: -10;
+    padding-left:30px;
+}
+.action img{
+    width:200px;
+    z-index: -10;
+}
+.footer{
+    grid-area: bottom;
+}
+
+/* 221030 0920 個別項目の調整 */
+li{
+    list-style-type:none;
+    border: 1px solid #666;
+    width:200px;
+    height:200px;
+    /* background-color: #FFF; */
+    /* display:table-cell;   */
+    /* cursor: pointer;  */
+    /* width:100px;
+    height:100px; */
+    align-items: center;
+}
+li:hover{
+    background: #0066CC;
+    color:yellow;
+}
+li img{
+    width: 200px;
+    height:200px;
+}
+
+/* 221030 1227 スライドショー（from cheese） */
+右から左へ
+----------------------------*/
+.d-demo{
+  margin-top:0px;
+  padding:0px 0px;
+  height:350px;
+}
+
+@keyframes infinity-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/*
+IE11対策
+----------------------------*/
+_:-ms-lang(x)::-ms-backdrop,
+.d-demo {
+  display: -ms-grid;
+  overflow: hidden;
+}
+/*----------------------------*/
+
+.d-demo__wrap {
+  display: flex;
+  overflow: hidden;
+}
+
+.d-demo__list {
+  display: flex;
+  list-style: none;
+}
+
+.d-demo__list--left{
+animation :infinity-scroll-left 20s infinite linear 0.5s both;
+}
+
+.d-demo__item {
+  width: calc(125vw / 4);
+}
+.d-demo__item  img{
+   width: 100%;
+   height:200px;
+}
+
+
+/* 221103 1655 モーダル追加 */
+
+#bg {
+    height:100%;
+    width:100%;
+    top:0%;
+    left:0%;
+    position:fixed;
+    background:rgba(0,0,0,0.4);
+  }
+   /* 221103 2104 win･loseで分類 */
+  #modal_win {
+    height:900px;
+    width:900px;
+    position:fixed;
+    background:#fff;
+    top:0%;
+    left:0%;
+    bottom:0%;
+    right:0%;
+    margin:auto;
+    background:url("./img/katuo_win.jpg") ;
+    text-align: center;
+    overflow-y: scroll;
+    z-index:8;
+  }
+
+  #modal_lose {
+    height:680px;
+    width:1200px;
+    position:fixed;
+    background:#fff;
+    top:0%;
+    left:0%;
+    bottom:0%;
+    right:0%;
+    margin:auto;
+    background:url("./img/katuo_lose.jpg") ;
+    text-align: center;
+    overflow-y: scroll;
+    z-index:8;
+  }
+  /* 221103 1711 追加 */
+  #kekka{
+    position:fixed;
+    top:50%;
+    left:10%;
+    /* transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0); */
+    font-size:80px;
+    position:fixed;
+    color:blue;
+    -webkit-text-stroke: 3px gray;
+    z-index:10;
+  }
+
+  #owari{
+    position:fixed;
+    top:70%;
+    left:50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    color:black;
+    z-index:15;
+  }
+
+  .zoomIn {
+    animation:ZoomIn 0.4s linear;
+  }
+  /* @-webkit-keyframes ZoomIn { */
+  @keyframes ZoomIn {
+    0% {
+      transform:scale(1.5);
+      opacity:0;
+    }
+    100% {
+      transform:scale(1);
+      opacity:1;
+    }
+  }
+  /* @keyframes zoomIn {
+    0% {
+      transform:scale(1.5);
+    }
+    100% {
+      transform:scale(1);
+    }
+  } */
+  .zoomOut {
+    animation:ZoomOut 0.4s linear;
+  }
+  /* @-webkit-keyframes ZoomOut { */
+  @keyframes ZoomOut {
+    0% {
+      transform:scale(1);
+      opacity:1;
+    }
+    100% {
+      transform:scale(1.5);
+      opacity:0;
+    }
+  }
+
+
